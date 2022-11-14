@@ -1,15 +1,13 @@
 package main
 
-import (
-	// "math/big"
-	// "strings"
-	// "time"
-	// "math/rand"
-	// "unicode/utf8"
-	// "math"
-	"fmt"
-	// "strings.Replace"
-)
+// "math/big"
+// "strings"
+// "time"
+// "math/rand"
+// "unicode/utf8"
+// "math"
+
+// "strings.Replace"
 
 func main() {
 	// fmt.Print("My")
@@ -129,28 +127,46 @@ func main() {
 	// 	fmt.Println("converted:", v8)
 	// }
 
-	face_ := "CSOITEUIWUIZNSROCNKFD"
-	len := len(face_)
-	key_ := "GOLANG"
+	// face_ := "CSOITEUIWUIZNSROCNKFD"//维吉尼亚解题
+	// len := len(face_)
+	// key_ := "GOLANG"
+	// ans := ""
+	// for i := 0; i < len; i++ {
+	// 	k := i
+	// 	for k > 5 {
+	// 		k -= 6
 
-	ans := ""
+	// 	}
 
-	for i := 0; i < len; i++ {
-		k := i
-		for k > 5 {
-			k -= 6
+	// 	cell := int(face_[i])
+	// 	step := int(key_[k]) - 65
+	// 	ans_ := cell + step
+	// 	if ans_ > 90 {
+	// 		ans_ -= 26
+	// 	}
+	// 	ans_cell := string(ans_)
+	// 	ans = ans + ans_cell
+	// }
+	// fmt.Println(ans)
 
-		}
+	// ans := "GOODNIGHT"//维吉尼亚出题
+	// key := "GOLANG"
+	// question := ""
+	// len := len(ans)
+	// for i := 0; i < len; i++ {
+	// 	k := i
+	// 	for k > 5 {
+	// 		k -= 6
+	// 	}
+	// 	cell := int(ans[i])
+	// 	step := int(key[k]) - 65
 
-		cell := int(face_[i])
-		step := int(key_[k]) - 65
-		ans_ := cell + step
-		if ans_ > 90 {
-			ans_ -= 26
-		}
-		ans_cell := string(ans_)
-		ans = ans + ans_cell
-	}
-	fmt.Println(ans)
-
+	// 	ques := cell - step
+	// 	if ques < 65 {
+	// 		ques += 26
+	// 	}
+	// 	ques_cell := string(ques)
+	// 	question += ques_cell
+	// }
+	// fmt.Println(question)
 }
