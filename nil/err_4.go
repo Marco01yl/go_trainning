@@ -60,15 +60,26 @@ func (g *Grid) Set(row, colume int, digit int8) error {
 func main() {
 	var g Grid
 	err := g.Set(12, 0, 15)
+
 	if err != nil {
-		switch err {
-		case ErrBounds, ErrDigit:
-			fmt.Println("Les errurs de parameters ")
-		default:
-			fmt.Println(err)
+		if errs, ok := err.(SudokuError); ok {
+			fmt.Printf("%d Error(s) ocured:\n", len(errs))
+			for _, e := range errs {
+				fmt.Printf("- %v\n", e)
+			}
 		}
 		os.Exit(1)
-		// fmt.Printf("An error ocurred: %v.\n", err)
-		// os.Exit(1)
 	}
+	// if err != nil {
+	// 	switch err {
+	// 	case ErrBounds, ErrDigit:
+	// 		fmt.Println("Les errurs de parameters ")
+	// 	default:
+	// 		fmt.Println(err)
+	// 	}
+	// 	os.Exit(1)
+
+	// fmt.Printf("An error ocurred: %v.\n", err)
+	// os.Exit(1)
+
 }
