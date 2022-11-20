@@ -13,32 +13,40 @@ func sourceGopher(downstream chan string) {
 	close(downstream)
 }
 
+//	func filterGopher(upstream, downstream chan string) {
+//		for {
+//			item, ok := <-upstream
+//			// if item == " " {
+//			// 	downstream <- " "
+//			// 	return
+//			// }
+//			if !ok {
+//				close(downstream)
+//				return
+//			}
+//			if !strings.Contains(item, "bad") {
+//				downstream <- item
+//			}
+//		}
+//	}
 func filterGopher(upstream, downstream chan string) {
-	for {
-		item, ok := <-upstream
-		// if item == " " {
-		// 	downstream <- " "
-		// 	return
-		// }
-		if !ok {
-			close(downstream)
-			return
-		}
+	for item := range upstream { //直到upsteam关闭
 		if !strings.Contains(item, "bad") {
 			downstream <- item
 		}
 	}
+	close(downstream)
 }
 
 func printGopher(upstream chan string) {
-	for {
-		v, ok := <-upstream
-		if !ok {
-			return
-		}
-		// if v == " " {
+	for v := range upstream {
+		// v, ok := <-upstream
+		// if !ok {
 		// 	return
 		// }
+		// // if v == " " {
+		// // 	return
+		// // }
 		fmt.Println(v)
 	}
 }
