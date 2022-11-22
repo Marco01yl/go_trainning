@@ -40,6 +40,7 @@ func filterGopher(upstream, downstream chan string) {
 
 func printGopher(upstream chan string) {
 	for v := range upstream {
+		fmt.Println(v)
 		// v, ok := <-upstream
 		// if !ok {
 		// 	return
@@ -47,7 +48,7 @@ func printGopher(upstream chan string) {
 		// // if v == " " {
 		// // 	return
 		// // }
-		fmt.Println(v)
+
 	}
 }
 
